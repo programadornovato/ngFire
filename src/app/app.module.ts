@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ListaComponent } from './components/lista/lista.component';
 import { ListaAgregaComponent } from './components/lista-agrega/lista-agrega.component';
 import { ConService } from './service/con.service';
+import { FormsModule }   from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ConService } from './service/con.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    FormsModule
   ],
   providers: [ConService],
   bootstrap: [AppComponent]

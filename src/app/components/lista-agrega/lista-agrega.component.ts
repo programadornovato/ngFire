@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConService } from 'src/app/service/con.service';
 
 @Component({
   selector: 'app-lista-agrega',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista-agrega.component.css']
 })
 export class ListaAgregaComponent implements OnInit {
-
-  constructor() { }
+  item:any={name:''};
+  constructor(private ser:ConService) { }
 
   ngOnInit() {
   }
-
+  agregar(){
+    this.ser.addItem(this.item);
+  }
 }
