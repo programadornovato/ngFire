@@ -8,9 +8,14 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ListaComponent } from './components/lista/lista.component';
+import { ListaAgregaComponent } from './components/lista-agrega/lista-agrega.component';
+import { ConService } from './service/con.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaComponent,
+    ListaAgregaComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  providers: [],
+  providers: [ConService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
